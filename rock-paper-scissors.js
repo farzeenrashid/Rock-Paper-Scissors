@@ -19,32 +19,31 @@ let playerWinCounter = 0;
 
 async function playRound() {
 
-    for (let round = 1; round <= 5; round++) {
-
-      console.log(`Round ${round}:`);
+    for (let round = 1; round <= 5;) {
+        console.log("--------------------------------");
+        console.log(`Round ${round}:`);
       
-      let playerChoice = await playerSelection();
-      playerChoice = playerChoice.toLowerCase().trim();
-      console.log(`Your choice: ${playerChoice}`);
+        let playerChoice = await playerSelection();
+        playerChoice = playerChoice.toLowerCase().trim();
+        console.log(`Your choice: ${playerChoice}`);
       
-      const computerChoice = computerSelection();
-      console.log(`Computer's choice: ${computerChoice}`);  
+        const computerChoice = computerSelection();
+        console.log(`Computer's choice: ${computerChoice}`);  
       
         if (computerChoice === "rock" && playerChoice === "paper" || computerChoice === "scissors" && playerChoice === "rock" || computerChoice === "paper" && playerChoice === "scissors") {
             console.log("You win!");
             playerWinCounter++;
             console.log(`Player wins: ${playerWinCounter}, Computer wins: ${computerWinCounter}`);
+            round++
         } else if (computerChoice === "paper" && playerChoice === "rock" || computerChoice === "rock" && playerChoice === "scissors" || computerChoice === "scissors" && playerChoice === "paper") {
             console.log("Computer wins!");
             computerWinCounter++;
             console.log(`Player wins: ${playerWinCounter}, Computer wins: ${computerWinCounter}`);
-        } else if (computerChoice === "rock" && playerChoice === "rock" || computerChoice === "paper" && playerChoice === "paper" || computerChoice === "scissors" && playerChoice === "scissors") {
-            console.log("It's a tie!");
-            console.log(`Player wins: ${playerWinCounter}, Computer wins: ${computerWinCounter}`);
+            round++
+        } else if (computerChoice === playerChoice) {
+            console.log("It's a tie! Restarting round...");
+            continue;
         }
-
-      console.log("--------------------------------");
-
     }
     determineWinner();
     rl.close();
