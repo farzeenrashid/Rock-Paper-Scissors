@@ -56,7 +56,7 @@ function determineWinner() {
     } else if (playerWinCounter < computerWinCounter) {
         console.log("Aw shucks, looks like the computer beat you. Better luck next time.");
     } else if (playerWinCounter === computerWinCounter) {
-        console.log("It's a tie! Looks like neither of you won.");
+        console.log("It's a tie! You were so close.");
     }  
  }
 
