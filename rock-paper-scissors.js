@@ -1,3 +1,5 @@
+console.log("Let's play rock paper scissors!")
+
 const readline = require('readline');
 
 const rl = readline.createInterface({
@@ -5,7 +7,7 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-const playerSelection = () => new Promise(resolve => rl.question("Pick your fighter (rock, paper, or scissors?): ", resolve));
+const playerSelection = () => new Promise(resolve => rl.question("Pick your fighter: ", resolve));
 
 function computerSelection() {
     const arr = ["rock", "paper", "scissors"];
