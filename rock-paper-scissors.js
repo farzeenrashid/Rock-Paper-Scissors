@@ -17,13 +17,14 @@ function computerSelection() {
 let computerWinCounter = 0;
 let playerWinCounter = 0;
 
- async function playRound() {
+async function playRound() {
 
     for (let round = 1; round <= 5; round++) {
 
       console.log(`Round ${round}:`);
       
-      const playerChoice = await playerSelection();
+      let playerChoice = await playerSelection();
+      playerChoice = playerChoice.toLowerCase().trim();
       console.log(`Your choice: ${playerChoice}`);
       
       const computerChoice = computerSelection();
@@ -43,6 +44,7 @@ let playerWinCounter = 0;
         }
 
       console.log("--------------------------------");
+
     }
     determineWinner();
     rl.close();
