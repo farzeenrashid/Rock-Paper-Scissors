@@ -1,4 +1,4 @@
-console.log("Let's play rock paper scissors!")
+// console.log("Let's play rock paper scissors!")
 
 const readline = require('readline');
 
