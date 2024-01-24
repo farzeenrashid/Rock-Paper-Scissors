@@ -119,18 +119,13 @@ function resetAnimation(elementId) {
     }
 }
 
-function makeChoice(playerChoice) {
-    // Add this line to enable dragging for each choice
-    // document.getElementById(playerChoice).setAttribute('draggable', 'true');
-
-    const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-    // Call the playRound function with the selected choice
-    playRound(playerChoice);
-    // playRound(computerChoice);
+function makeChoice(playerChoice) {
 
-    // Rest of your existing code...
+    playRound(playerChoice, computerChoice);
+
 }
 
 function displayResult(playerChoice, computerChoice) {

@@ -355,7 +355,8 @@ body {
     background-color: rgba(128, 128, 128, 0.808);
 }
 
-.playAnim {
+/* .playAnim {
+    position: relative;
     animation-name: played;
     animation-duration: 1s;
-  }
+  } */
