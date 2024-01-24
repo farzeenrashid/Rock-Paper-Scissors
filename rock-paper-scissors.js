@@ -52,7 +52,7 @@ let round = 1;
 
 function animateMove(elementId) {
     const element = document.getElementById(elementId);
-    element.classList.add('dragging');
+    // element.classList.add('dragging');
     // element.style.zIndex = 2;
 
     // Define translation values based on the choice
@@ -101,7 +101,7 @@ function animateMove(elementId) {
 function resetAnimation(elementId) {
     const element = document.getElementById(elementId);
     element.style.transition = ''; 
-    element.classList.remove('dragging', 'highlight-winner', 'highlight-loser', 'highlight-tie');
+    element.classList.remove('highlight-winner', 'highlight-loser', 'highlight-tie');
     if (elementId === 'rock') {
         element.style.transform = 'translate(-240px, 1010px) scale(0.2) rotate(-90deg)';
     }
