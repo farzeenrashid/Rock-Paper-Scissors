@@ -197,7 +197,7 @@ body {
     transform: translateX(38%) translateY(5%);
 }
 
-.left #rock {
+.left #uRock {
     /* position: relative; */
     cursor: pointer;
     transform: rotate(-90deg) scale(0.2) translateX(-1180%) translateY(-208%);
@@ -205,7 +205,7 @@ body {
     z-index: 2;
 }
 
-.left #paper {
+.left #uPaper {
     /* position: absolute; */
     cursor: pointer;
     transform: scale(0.2) translateX(-275%) translateY(447%);
@@ -213,7 +213,7 @@ body {
     z-index: 2;
 }
 
-.left #scissors {
+.left #uScissors {
     /* position: absolute; */
     cursor: pointer;
     transform: scale(0.2) translateX(-270%) translateY(25%);
@@ -221,7 +221,7 @@ body {
     z-index: 2;
 }
 
-.left #lizard {
+.left #uLizard {
     /* position: absolute; */
     cursor: pointer;
     transform: rotate(-90deg) scale(0.2) translateX(565%) translateY(-195%);
@@ -229,7 +229,7 @@ body {
     z-index: 2;
 }
 
-.left #spock {
+.left #uSpock {
     /* position: absolute; */
     cursor: pointer;
     transform: scale(0.2) translateX(-285%) translateY(-790%);
@@ -253,29 +253,29 @@ body {
     transform: translateX(3.5%) translateY(-57%);
 }
 
-.right #rock {
+.right #cRock {
     transform: scale(0.2) translateX(190%) translateY(855%)  rotate(-90deg);
     transition: transform 0.4s ease-in-out;
     z-index: 2;
 }
 
-.right #paper {
+.right #cPaper {
     transform: scale(0.2) translateX(200%) translateY(435%);
     transition: transform 0.4s ease-in-out;
     z-index: 2;
 }
 
-.right #scissors {
+.right #cScissors {
     transform: scale(0.2) translateX(250%) translateY(36%);
     transition: transform 0.4s ease-in-out;
     z-index: 2;
 }
 
-.right #lizard {
+.right #cLizard {
     transform: scale(0.2) translateX(205%) translateY(-412%) rotate(-90deg);
 }
 
-.right #spock {
+.right #cSpock {
     transform: scale(0.2) translateX(235%) translateY(-780%);
     transition: transform 0.4s ease-in-out;
     z-index: 2;

@@ -61,32 +61,32 @@ function animateMove(elementId) {
     let scale = 1;
     let rotate = 0;
 
-        if (elementId === 'rock') {
+        if (elementId === 'uRock') {
             // Move diagonally (100px right and 100px down)
             translateX = 120;
             translateY = 1250;
             scale = 0.55; // Adjust the scale as needed
             rotate = -90;
-        } else if (elementId === 'paper') {
+        } else if (elementId === 'uPaper') {
             // Move 100px right
             translateX = 140;
             translateY = 680;
             scale = 0.65; // Adjust the scale as needed
             // zIndex = 2;
-        } else if (elementId === 'scissors') {
+        } else if (elementId === 'uScissors') {
             // Move 100px up and 100px right
             translateX = 140;
             translateY = 50;
             scale = 0.65; // Adjust the scale as needed
             // zIndex = 2;
-        } else if (elementId === 'lizard') {
+        } else if (elementId === 'uLizard') {
             // Move 100px up and 100px right
             translateX = 120;
             translateY = -580;
             scale = 0.55; // Adjust the scale as needed
             // zIndex = 2;
             rotate = -90;
-        } else {
+        } else if (elementId === 'uSpock'){
             // Move 100px up and 100px right
             translateX = 140;
             translateY = -1190;
@@ -94,107 +94,107 @@ function animateMove(elementId) {
             // zIndex = 2;
         }
 
+
     element.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale}) rotate(${rotate}deg)`;
 }
 
 
-function resetAnimation(elementId) {
-    const element = document.getElementById(elementId);
-    element.style.transition = ''; 
-    element.classList.remove('highlight-winner', 'highlight-loser', 'highlight-tie');
-    if (elementId === 'rock') {
-        element.style.transform = 'translate(-240px, 1010px) scale(0.2) rotate(-90deg)';
-    }
-    else if (elementId === 'paper') {
-        element.style.transform = 'translate(-230px, 525px) scale(0.2)';
-    }
-    else if (elementId === 'scissors') {
-        element.style.transform = 'translate(-210px, 29px) scale(0.2)';
-    }
-    else if (elementId === 'lizard') {
-        element.style.transform = 'translate(-230px, -475px) scale(0.2) rotate(-90deg)';
-    }
-    else {
-        element.style.transform = 'translate(-210px, -990px) scale(0.2)';
-    }
-}
+// function resetAnimation(elementId) {
+//     const element = document.getElementById(elementId);
+//     element.style.transition = ''; 
+//     element.classList.remove('highlight-winner', 'highlight-loser', 'highlight-tie');
+//     if (elementId === 'rock') {
+//         element.style.transform = 'translate(-240px, 1010px) scale(0.2) rotate(-90deg)';
+//     }
+//     else if (elementId === 'paper') {
+//         element.style.transform = 'translate(-230px, 525px) scale(0.2)';
+//     }
+//     else if (elementId === 'scissors') {
+//         element.style.transform = 'translate(-210px, 29px) scale(0.2)';
+//     }
+//     else if (elementId === 'lizard') {
+//         element.style.transform = 'translate(-230px, -475px) scale(0.2) rotate(-90deg)';
+//     }
+//     else {
+//         element.style.transform = 'translate(-210px, -990px) scale(0.2)';
+//     }
+// }
 
-  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+//   const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+//     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-function makeChoice(playerChoice, computerChoice) {
 
-    playRound(playerChoice, computerChoice);
 
-}
+    playRound(playerChoice);
 
-function displayResult(playerChoice, computerChoice) {
-    const userChoiceElement = document.getElementById(playerChoice);
-    const computerChoiceElement = document.getElementById(computerChoice);
 
-    const resultMessage = determineWinner(playerChoice, computerChoice);
+// function displayResult(playerChoice, computerChoice) {
+//     const userChoiceElement = document.getElementById(playerChoice);
+//     const computerChoiceElement = document.getElementById(computerChoice);
 
-    if (resultMessage.includes('You win!')) {
-        userChoiceElement.classList.add('highlight-winner');
-        computerChoiceElement.classList.add('highlight-loser');
-    } else if (resultMessage.includes('The computer wins!')) {
-        computerChoiceElement.classList.add('highlight-winner');
-        userChoiceElement.classList.add('highlight-loser');
-    }
-    else {
-        computerChoiceElement.classList.add('highlight-tie');
-        userChoiceElement.classList.add('highlight-tie');
-    }
+//     const resultMessage = determineWinner(playerChoice, computerChoice);
 
-    setTimeout(() => {
-        resetAnimation(playerChoice);
-        resetAnimation(computerChoice);
-        userChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
-        computerChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
-        round++;
-        updateScoreDisplay();
-    }, 2000);
-}
+//     if (resultMessage.includes('You win!')) {
+//         userChoiceElement.classList.add('highlight-winner');
+//         computerChoiceElement.classList.add('highlight-loser');
+//     } else if (resultMessage.includes('The computer wins!')) {
+//         computerChoiceElement.classList.add('highlight-winner');
+//         userChoiceElement.classList.add('highlight-loser');
+//     }
+//     else {
+//         computerChoiceElement.classList.add('highlight-tie');
+//         userChoiceElement.classList.add('highlight-tie');
+//     }
 
-function determineWinner(playerChoice, computerChoice) {
-    if (computerChoice === playerChoice) {
-        return "It's a tie!";
-    } else if (
-        (playerChoice === "rock" && computerChoice === "scissors") ||
-        (playerChoice === "rock" && computerChoice === "lizard") ||
-        (playerChoice === "paper" && computerChoice === "rock") ||
-        (playerChoice === "paper" && computerChoice === "spock") ||
-        (playerChoice === "scissors" && computerChoice === "paper") ||
-        (playerChoice === "scissors" && computerChoice === "lizard") ||
-        (playerChoice === "lizard" && computerChoice === "paper") ||
-        (playerChoice === "lizard" && computerChoice === "spock") ||
-        (playerChoice === "spock" && computerChoice === "rock") ||
-        (playerChoice === "spock" && computerChoice === "scissors")
-    ) {
-        userScore++;
-        return "You win!";
-    } else {
-        computerScore++;
-        return "The computer wins!";
-    }
-}
+//     setTimeout(() => {
+//         resetAnimation(playerChoice);
+//         resetAnimation(computerChoice);
+//         userChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
+//         computerChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
+//         round++;
+//         updateScoreDisplay();
+//     }, 2000);
+// }
 
-function updateScoreDisplay() {
-    const userScoreElement = document.getElementById('userScore');
-    const computerScoreElement = document.getElementById('computerScore');
-    const roundElement = document.getElementById('roundNumber');
+// function determineWinner(playerChoice, computerChoice) {
+//     if (computerChoice === playerChoice) {
+//         return "It's a tie!";
+//     } else if (
+//         (playerChoice === "rock" && computerChoice === "scissors") ||
+//         (playerChoice === "rock" && computerChoice === "lizard") ||
+//         (playerChoice === "paper" && computerChoice === "rock") ||
+//         (playerChoice === "paper" && computerChoice === "spock") ||
+//         (playerChoice === "scissors" && computerChoice === "paper") ||
+//         (playerChoice === "scissors" && computerChoice === "lizard") ||
+//         (playerChoice === "lizard" && computerChoice === "paper") ||
+//         (playerChoice === "lizard" && computerChoice === "spock") ||
+//         (playerChoice === "spock" && computerChoice === "rock") ||
+//         (playerChoice === "spock" && computerChoice === "scissors")
+//     ) {
+//         userScore++;
+//         return "You win!";
+//     } else {
+//         computerScore++;
+//         return "The computer wins!";
+//     }
+// }
 
-    userScoreElement.textContent = userScore;
-    computerScoreElement.textContent = computerScore;
-    roundElement.textContent = `Round ${round}`;
-}
+// function updateScoreDisplay() {
+//     const userScoreElement = document.getElementById('userScore');
+//     const computerScoreElement = document.getElementById('computerScore');
+//     const roundElement = document.getElementById('roundNumber');
+
+//     userScoreElement.textContent = userScore;
+//     computerScoreElement.textContent = computerScore;
+//     roundElement.textContent = `Round ${round}`;
+// }
 
 function playRound(playerChoice) {
-    const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+    const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-    animateMove(playerChoice);
-    animateMove(computerChoice);
+    animateMove('u' + playerChoice);
+    animateMove('c' + computerChoice);
     displayResult(playerChoice, computerChoice);
 }
 
