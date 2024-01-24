@@ -122,7 +122,7 @@ function resetAnimation(elementId) {
   const choices = ["rock", "paper", "scissors", "lizard", "spock"];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
-function makeChoice(playerChoice) {
+function makeChoice(playerChoice, computerChoice) {
 
     playRound(playerChoice, computerChoice);
 

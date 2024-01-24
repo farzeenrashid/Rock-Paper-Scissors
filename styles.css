@@ -242,30 +242,41 @@ body {
     transform: translateY(201%) translateX(85%) scale(0.8) scaleX(0.85);
 }
 
-.right .rock {
+.right {
+    position: relative;
+}
+
+.right li {
+    list-style-type: none;
+    position: relative;
+    z-index: 2; 
+    transform: translateX(3.5%) translateY(-57%);
+}
+
+.right #rock {
     transform: scale(0.2) translateX(190%) translateY(855%)  rotate(-90deg);
     transition: transform 0.4s ease-in-out;
     z-index: 2;
 }
 
-.right .paper {
+.right #paper {
     transform: scale(0.2) translateX(200%) translateY(435%);
     transition: transform 0.4s ease-in-out;
     z-index: 2;
 }
 
-.right .scissors {
-    transform: scale(0.2) translateX(250%) translateY(15%);
+.right #scissors {
+    transform: scale(0.2) translateX(250%) translateY(36%);
     transition: transform 0.4s ease-in-out;
     z-index: 2;
 }
 
-.right .lizard {
-    transform: scale(0.2) translateX(220%) translateY(-410%) rotate(-90deg);
+.right #lizard {
+    transform: scale(0.2) translateX(205%) translateY(-412%) rotate(-90deg);
 }
 
-.right .spock {
-    transform: scale(0.2) translateX(250%) translateY(-790%);
+.right #spock {
+    transform: scale(0.2) translateX(235%) translateY(-780%);
     transition: transform 0.4s ease-in-out;
     z-index: 2;
 }
