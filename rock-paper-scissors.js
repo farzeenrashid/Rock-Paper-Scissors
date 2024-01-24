@@ -55,139 +55,180 @@ function animateMove(elementId) {
     // element.classList.add('dragging');
     // element.style.zIndex = 2;
 
-    // Define translation values based on the choice
     let translateX = 0;
     let translateY = 0;
     let scale = 1;
     let rotate = 0;
 
         if (elementId === 'uRock') {
-            // Move diagonally (100px right and 100px down)
             translateX = 120;
             translateY = 1250;
-            scale = 0.55; // Adjust the scale as needed
+            scale = 0.55; 
             rotate = -90;
         } else if (elementId === 'uPaper') {
-            // Move 100px right
             translateX = 140;
             translateY = 680;
-            scale = 0.65; // Adjust the scale as needed
-            // zIndex = 2;
+            scale = 0.65; 
         } else if (elementId === 'uScissors') {
-            // Move 100px up and 100px right
             translateX = 140;
             translateY = 50;
-            scale = 0.65; // Adjust the scale as needed
-            // zIndex = 2;
+            scale = 0.65; 
         } else if (elementId === 'uLizard') {
-            // Move 100px up and 100px right
             translateX = 120;
             translateY = -580;
-            scale = 0.55; // Adjust the scale as needed
-            // zIndex = 2;
+            scale = 0.55; 
             rotate = -90;
         } else if (elementId === 'uSpock'){
-            // Move 100px up and 100px right
             translateX = 140;
             translateY = -1190;
-            scale = 0.65; // Adjust the scale as needed
-            // zIndex = 2;
+            scale = 0.65;
+        } else if (elementId === 'cRock') {
+            translateX = 140;
+            translateY = 680;
+            scale = 0.65; 
         }
-
-
+        else if (elementId === 'cPaper') {
+            translateX = 140;
+            translateY = 680;
+            scale = 0.65; 
+        }
+        else if (elementId === 'cScissors') {
+            translateX = 140;
+            translateY = 680;
+            scale = 0.65; 
+        }
+        else if (elementId === 'cLizard') {
+            translateX = 140;
+            translateY = 680;
+            scale = 0.65; 
+        }
+        else if (elementId === 'cSpock') {
+            translateX = 160;
+            translateY = 680;
+            scale = 0.65; 
+        }
     element.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale}) rotate(${rotate}deg)`;
 }
 
+function resetAnimation(elementId) {
+    const element = document.getElementById(elementId);
+    element.style.transition = ''; 
+    element.classList.remove('highlight-winner', 'highlight-loser', 'highlight-tie');
+    if (elementId === 'uRock') {
+        element.style.transform = 'translate(-240px, 1010px) scale(0.2) rotate(-90deg)';
+    }
+    else if (elementId === 'uPaper') {
+        element.style.transform = 'translate(-230px, 525px) scale(0.2)';
+    }
+    else if (elementId === 'uScissors') {
+        element.style.transform = 'translate(-210px, 29px) scale(0.2)';
+    }
+    else if (elementId === 'uLizard') {
+        element.style.transform = 'translate(-230px, -475px) scale(0.2) rotate(-90deg)';
+    }
+    else if (elementId === 'uSpock') {
+        element.style.transform = 'translate(-210px, -990px) scale(0.2)';
+    }
+    else if (elementId === 'cRock') {
+        element.style.transform = 'translate(-230px, 525px) scale(0.2)';
+    }
+    else if (elementId === 'cPaper') {
+        element.style.transform = 'translate(-230px, 525px) scale(0.2)';
+    }
+    else if (elementId === 'cScissors') {
+        element.style.transform = 'translate(-210px, 29px) scale(0.2)';
+    }
+    else if (elementId === 'cLizard') {
+        element.style.transform = 'translate(-230px, -475px) scale(0.2) rotate(-90deg)';
+    }
+    else if (elementId === 'cSpock') {
+        element.style.transform = 'translate(-210px, -990px) scale(0.2)';
+    }
+}
 
-// function resetAnimation(elementId) {
-//     const element = document.getElementById(elementId);
-//     element.style.transition = ''; 
-//     element.classList.remove('highlight-winner', 'highlight-loser', 'highlight-tie');
-//     if (elementId === 'rock') {
-//         element.style.transform = 'translate(-240px, 1010px) scale(0.2) rotate(-90deg)';
-//     }
-//     else if (elementId === 'paper') {
-//         element.style.transform = 'translate(-230px, 525px) scale(0.2)';
-//     }
-//     else if (elementId === 'scissors') {
-//         element.style.transform = 'translate(-210px, 29px) scale(0.2)';
-//     }
-//     else if (elementId === 'lizard') {
-//         element.style.transform = 'translate(-230px, -475px) scale(0.2) rotate(-90deg)';
-//     }
-//     else {
-//         element.style.transform = 'translate(-210px, -990px) scale(0.2)';
-//     }
-// }
-
-//   const choices = ["rock", "paper", "scissors", "lizard", "spock"];
-//     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
 
+    playRound('u' + playerChoice);
 
-    playRound(playerChoice);
 
+function displayResult(playerChoice, computerChoice) {
+    // const newPlayerChoice = playerChoice.substring(1);
+    // const newCompChoice = computerChoice.substring(1);
+    const userChoiceElement = document.getElementById(playerChoice);
+    const computerChoiceElement = document.getElementById(computerChoice);
 
-// function displayResult(playerChoice, computerChoice) {
-//     const userChoiceElement = document.getElementById(playerChoice);
-//     const computerChoiceElement = document.getElementById(computerChoice);
+    const resultMessage = determineWinner(playerChoice, computerChoice);
 
-//     const resultMessage = determineWinner(playerChoice, computerChoice);
+    if (resultMessage.includes('You win!')) {
+        userChoiceElement.classList.add('highlight-winner');
+        computerChoiceElement.classList.add('highlight-loser');
+    } else if (resultMessage.includes('The computer wins!')) {
+        computerChoiceElement.classList.add('highlight-winner');
+        userChoiceElement.classList.add('highlight-loser');
+    }
+    else {
+        computerChoiceElement.classList.add('highlight-tie');
+        userChoiceElement.classList.add('highlight-tie');
+    }
 
-//     if (resultMessage.includes('You win!')) {
-//         userChoiceElement.classList.add('highlight-winner');
-//         computerChoiceElement.classList.add('highlight-loser');
-//     } else if (resultMessage.includes('The computer wins!')) {
-//         computerChoiceElement.classList.add('highlight-winner');
-//         userChoiceElement.classList.add('highlight-loser');
-//     }
-//     else {
-//         computerChoiceElement.classList.add('highlight-tie');
-//         userChoiceElement.classList.add('highlight-tie');
-//     }
+    setTimeout(() => {
+        resetAnimation(playerChoice);
+        resetAnimation(computerChoice);
+        userChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
+        computerChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
+        round++;
+        updateScoreDisplay();
+    }, 2000);
+}
 
-//     setTimeout(() => {
-//         resetAnimation(playerChoice);
-//         resetAnimation(computerChoice);
-//         userChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
-//         computerChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
-//         round++;
-//         updateScoreDisplay();
-//     }, 2000);
-// }
+function determineWinner(playerChoice, computerChoice) {
+    //     const newPlayerChoice = playerChoice.substring(1);
+    // const newCompChoice = computerChoice.substring(1);
+    if (
+        (playerChoice === "uRock" && computerChoice === "cScissors") ||
+        (playerChoice === "uRock" && computerChoice === "cLizard") ||
+        (playerChoice === "uPaper" && computerChoice === "cRock") ||
+        (playerChoice === "uPaper" && computerChoice === "cSpock") ||
+        (playerChoice === "uScissors" && computerChoice === "cPaper") ||
+        (playerChoice === "uScissors" && computerChoice === "cLizard") ||
+        (playerChoice === "uLizard" && computerChoice === "cPaper") ||
+        (playerChoice === "uLizard" && computerChoice === "cSpock") ||
+        (playerChoice === "uSpock" && computerChoice === "cRock") ||
+        (playerChoice === "uSpock" && computerChoice === "cScissors")
+    ) {
+        userScore++;
+        return "You win!";
+    } else if (
+        (computerChoice === "cRock" && playerChoice === "uScissors") ||
+        (computerChoice === "cRock" && playerChoice === "uLizard") ||
+        (computerChoice === "cPaper" && playerChoice === "uRock") ||
+        (computerChoice === "cPaper" && playerChoice === "uSpock") ||
+        (computerChoice === "cScissors" && playerChoice === "uPaper") ||
+        (computerChoice === "cScissors" && playerChoice === "uLizard") ||
+        (computerChoice === "cLizard" && playerChoice === "uPaper") ||
+        (computerChoice === "cLizard" && playerChoice === "uSpock") ||
+        (computerChoice === "cSpock" && playerChoice === "uRock") ||
+        (computerChoice === "cSpock" && playerChoice === "uScissors")
+    ) {
+        computerScore++;
+        return "The computer wins!";
+    }
+    else {
+     return "It's a tie!";
+    } 
+}
 
-// function determineWinner(playerChoice, computerChoice) {
-//     if (computerChoice === playerChoice) {
-//         return "It's a tie!";
-//     } else if (
-//         (playerChoice === "rock" && computerChoice === "scissors") ||
-//         (playerChoice === "rock" && computerChoice === "lizard") ||
-//         (playerChoice === "paper" && computerChoice === "rock") ||
-//         (playerChoice === "paper" && computerChoice === "spock") ||
-//         (playerChoice === "scissors" && computerChoice === "paper") ||
-//         (playerChoice === "scissors" && computerChoice === "lizard") ||
-//         (playerChoice === "lizard" && computerChoice === "paper") ||
-//         (playerChoice === "lizard" && computerChoice === "spock") ||
-//         (playerChoice === "spock" && computerChoice === "rock") ||
-//         (playerChoice === "spock" && computerChoice === "scissors")
-//     ) {
-//         userScore++;
-//         return "You win!";
-//     } else {
-//         computerScore++;
-//         return "The computer wins!";
-//     }
-// }
+function updateScoreDisplay() {
+    const userScoreElement = document.getElementById('u' + 'userScore');
+    const computerScoreElement = document.getElementById('c' + 'computerScore');
+    const roundElement = document.getElementById('roundNumber');
 
-// function updateScoreDisplay() {
-//     const userScoreElement = document.getElementById('userScore');
-//     const computerScoreElement = document.getElementById('computerScore');
-//     const roundElement = document.getElementById('roundNumber');
-
-//     userScoreElement.textContent = userScore;
-//     computerScoreElement.textContent = computerScore;
-//     roundElement.textContent = `Round ${round}`;
-// }
+    userScoreElement.textContent = userScore;
+    computerScoreElement.textContent = computerScore;
+    roundElement.textContent = `Round ${round}`;
+}
 
 function playRound(playerChoice) {
     const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
@@ -195,6 +236,6 @@ function playRound(playerChoice) {
 
     animateMove('u' + playerChoice);
     animateMove('c' + computerChoice);
-    displayResult(playerChoice, computerChoice);
+    displayResult('u' + playerChoice, 'c' + computerChoice);
 }
 
