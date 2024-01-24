@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>    
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <script src="rock-paper-scissors.js"></script>
+        <title>Rock, Paper, Scissors, Lizard, Spock!</title>
+        <link href="https://fonts.cdnfonts.com/css/twilight-lechy" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/alexandria-4" rel="stylesheet">
+                                                        
+    </head>
+
+    <body>
+
+    <div id="start-screen">
+
+        <div class="title">
+            <img src="/images/Wood-2.png" alt="Wood Picture" class="wood-title">
+            <div class="wood-text">
+                <p>Rock, Paper, Scissors,</p>
+                <p>Lizard, Spock!</p>
+            </div>
+            <div class="start">
+                <h1>Ready to play?</h1>
+                <button onclick="showGameDesScreen()"><p>Start</p></button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="game-description-screen">
+
+        <div class="game-description">
+            <img class="scroll-1" src="/images/Scroll.png" alt="Scroll Picture">
+            <p>"<strong>Rock, Paper, Scissors, 
+                Lizard, Spock</strong>" is an 
+                expansion on the traditional 
+                game "Rock, Paper, Scissors."</p>
+            <button onclick="showGameRulesScreen()">Alrighty!</button>
+        </div> 
+
+    </div>
+
+
+    <div id="game-rules-screen">
+
+        <div class="game-rules">
+            <img class="scroll-2" src="/images/Scroll.png" alt="Scroll Picture">
+            <ul>
+                <li>Rock beats scissors, </li>
+                <li>Paper beats rock, </li>
+                <li>Scissors beats paper, </li>
+            </ul>
+            <button onclick="showRoundSelection()">Okay, got it.</button>
+        </div>
+
+
+    </div>
+
+    <div id="round-selection-screen">
+
+        <div class="round-selection">
+            <p>You want to play best of...</p>
+            <div class="three-selection">
+                <img class="Red-Banner" src="/images/Red-Banner.png" alt="Red Banner">
+                <button onclick="showMainGameScreen()">3</button>
+            </div>
+            <div class="five-selection">
+                <img class="Yellow-Banner" src="/images/Yellow-Banner.png" alt="Yellow Banner">
+                <button onclick="showMainGameScreen()">5</button>            
+            </div>
+            <div class="ten-selection">
+                <img class="Blue-Banner" src="/images/Blue-Banner.png" alt="Blue Banner">
+                <button onclick="showMainGameScreen()">10</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="main-screen">
+        
+        <div class="main">
+
+            <div class="user-side"><p>You</p></div>
+            <div class="left">
+                <img class="wood-left" src="/images/Wood-1.png" alt="Wood Picture">
+                <ul>
+                    <li><img src="/images/Rock.png" alt="Rock" id="rock" onclick="makeChoice('rock')"></li>
+                    <li><img id="paper" src="/images/Paper.png" alt="Paper" onclick="makeChoice('paper')"></li>
+                    <li><img id="scissors" src="/images/Scissors.png" alt="Scissors" onclick="makeChoice('scissors')"></li>
+                    <li><img id="lizard" src="/images/Lizard.png" alt="Lizard" onclick="makeChoice('lizard')"></li>
+                    <li><img id="spock" src="/images/Spock.png" alt="Spock" onclick="makeChoice('spock')"></li>
+                </ul>
+            </div>
+
+            <div class="middle">
+                <span id="userScore">0</span>
+                <p>Your Score</p>
+                <div class="round-number">
+                    <p>Round</p>
+                </div>
+                <span id="computerScore">0</span>
+                <p>Computer Score</p>
+                <img class="stone-wall" src="/images/Stone-Wall.png" alt="Stone Wall">
+                <div class="user-selection"></div>
+                <div class="other-selection"></div>
+                <div class="game-message"><p>0</p></div>
+            </div>
+
+            <div class="computer-side"><p>Computer</p></div>
+            <div class="right">
+                <img class="wood-right" src="/images/Wood-1.png" alt="Wood Picture">
+                <ul>
+                    <li><img class="rock" src="/images/Rock.png" alt="Rock"></li>
+                    <li><img class="paper" src="/images/Paper.png" alt="Paper"></li>
+                    <li><img class="scissors" src="/images/Scissors.png" alt="Scissors"></li>
+                    <li><img class="lizard" src="/images/Lizard.png" alt="Lizard"></li>
+                    <li><img class="spock" src="/images/Spock.png" alt="Spock"></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    </body>
+
+</html>

@@ -1,0 +1,361 @@
+* {
+    text-decoration: none;
+}
+
+body {
+    background-image: url('/images/Grass.jpg');
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72vh;
+}
+
+.wood-title {
+    position:absolute;
+    transform: rotate(-90deg) scale(1.3);
+}
+
+.wood-text {
+    position: absolute;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 50px;
+    font-family: 'twilight lechy', sans-serif;    
+    font-size: 95px;
+    color: #472f03;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start h1 {
+    position: absolute;
+    text-align: center;
+    margin: 465px 0px 0px 50px;
+    font-size: 40px;
+    font-family: 'Alexandria', sans-serif;
+}
+
+.start button {
+    position: absolute;
+    font-size: 40px;
+    margin: 680px 0px 0px 40px;
+    padding: 0px 50px 0px 50px;
+    transform: scale(0.8);
+    font-family: 'Alexandria', sans-serif;
+    background-color: rgb(245, 132, 156);
+    color: rgb(255, 255, 255);
+    border: 5px solid rgb(44, 117, 50);
+    font-weight: bold;
+}
+
+.start button:hover {
+    background-color: rgb(219, 117, 139);
+    color: #e2d7d7;
+    transition: transform 0.2s ease-in-out background-color 0.4s color 0.4s;
+    cursor: pointer;
+    transform: translateY(2px);
+}
+
+#start-screen, #game-description-screen, #game-rules-screen, #round-selection-screen, #main-screen {
+    position: relative;
+    animation: screenAppear 0.9s ease-out;
+}
+
+.game-description, .game-rules, .round-selection, .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+
+.main {
+    position: relative;
+}
+
+.scroll-1, .scroll-2 {
+    position: absolute;
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+@keyframes textAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    40% {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.game-description p, .game-rules ul {
+    position: absolute;
+    margin: 0px 150px 0px 200px;
+    z-index: 2;
+    font-size: 19px;
+    white-space: pre-line;
+    animation: textAppear 2s ease-out;
+}
+
+.game-description button, .game-rules button {
+    position: absolute;
+    z-index: 2;
+    font-size: 18px;
+    margin-top: 360px;
+    padding: 5px 20px 5px 20px;
+    font-family: 'Alexandria', sans-serif;
+    color: black;
+    background-color: rgb(248, 202, 49);
+    border: 1px solid rgb(212, 160, 2);
+    animation: textAppear 4s ease-out;
+}
+
+.game-description button:hover, .game-rules button:hover, .round-selection button:hover {
+    cursor: pointer;
+}
+
+.round-selection p {
+    position: absolute;
+    text-align: center;
+    margin: 0px 0px 550px 20px;
+    font-family: 'Alexandria', sans-serif;  
+    font-size: 40px;
+    color: black;
+}
+
+.Red-Banner, .Yellow-Banner, .Blue-Banner {
+    margin: 120px 0px 0px 50px;
+    transform: scale(0.9);
+}
+
+.three-selection button {
+    position: absolute;
+    font-size: 145px;
+    transform: translateX(-260%);
+    margin-top: 260px;
+    font-family: 'Alexandria', sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(232, 132, 117);
+    border: 1px solid rgb(232, 132, 117);
+}
+
+.five-selection button {
+    position: absolute;
+    font-size: 145px;
+    transform: translateX(-260%);
+    margin-top: 260px;
+    font-family: 'Alexandria', sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 219, 92);
+    border: 1px solid rgb(255, 219, 92);
+}
+
+.ten-selection button {
+    position: absolute;
+    font-size: 145px;
+    transform: translateX(-177%);
+    margin-top: 260px;
+    font-family: 'Alexandria', sans-serif;
+    color: rgb(0, 0, 0);
+    background-color: rgb(128, 215, 249);
+    border: 1px solid rgb(128, 215, 249); 
+}
+
+.stone-wall {
+    position:absolute;
+    transform: scale(1.3) translateY(-44%) translateX(-7.7%);
+    z-index: 1;
+}
+
+.wood-left {
+    position:absolute;
+    transform: scale(0.8) scaleX(0.85) translateX(10%) translateY(187%);
+}
+
+.left {
+    position: relative;
+}
+
+.left li {
+    list-style-type: none;
+    position: relative;
+    z-index: 2; 
+    transform: translateX(38%) translateY(5%);
+}
+
+.left #rock {
+    /* position: relative; */
+    cursor: pointer;
+    transform: rotate(-90deg) scale(0.2) translateX(-1180%) translateY(-208%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.left #paper {
+    /* position: absolute; */
+    cursor: pointer;
+    transform: scale(0.2) translateX(-275%) translateY(447%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.left #scissors {
+    /* position: absolute; */
+    cursor: pointer;
+    transform: scale(0.2) translateX(-270%) translateY(25%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.left #lizard {
+    /* position: absolute; */
+    cursor: pointer;
+    transform: rotate(-90deg) scale(0.2) translateX(565%) translateY(-195%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.left #spock {
+    /* position: absolute; */
+    cursor: pointer;
+    transform: scale(0.2) translateX(-285%) translateY(-790%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.wood-right {
+    position:relative;
+    transform: translateY(201%) translateX(85%) scale(0.8) scaleX(0.85);
+}
+
+.right .rock {
+    transform: scale(0.2) translateX(190%) translateY(855%)  rotate(-90deg);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.right .paper {
+    transform: scale(0.2) translateX(200%) translateY(435%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.right .scissors {
+    transform: scale(0.2) translateX(250%) translateY(15%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.right .lizard {
+    transform: scale(0.2) translateX(220%) translateY(-410%) rotate(-90deg);
+}
+
+.right .spock {
+    transform: scale(0.2) translateX(250%) translateY(-790%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 2;
+}
+
+.user-side p {
+    font-size: 30px;
+    transform: translateY(-860%) translateX(80%);
+    font-family: 'Alexandria', sans-serif;
+}
+
+.computer-side p {
+    font-size: 30px;
+    transform: translateY(-860%) translateX(320%);
+    font-family: 'Alexandria', sans-serif;
+}
+
+#user-score, .round-number, #computer-score, .game-message {
+    position: absolute;
+    z-index: 2;
+}
+
+#user-score p {
+    font-size: 20px;
+    transform: translateY(-650%) translateX(-165%); 
+    background-color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-family: 'Alexandria', sans-serif;
+} 
+
+#computer-score p {
+    font-size: 20px;
+    transform: translateY(-650%) translateX(76%); 
+    background-color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-family: 'Alexandria', sans-serif;
+} 
+
+.round-number p {
+    font-size: 20px;
+    transform: translateY(-650%) translateX(-8%); 
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-family: 'Alexandria', sans-serif;
+} 
+
+.game-message p {
+    font-size: 20px;
+    transform: translateY(430%) translateX(-39%); 
+    background-color: rgb(188, 127, 196);
+    padding: 15px 300px;
+    border: 3px solid rgb(145, 97, 184);
+    font-family: 'Alexandria', sans-serif;
+}
+
+@keyframes screenAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    10% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.dragging {
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.highlight-winner {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+.highlight-loser {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.highlight-tie {
+    background-color: rgba(128, 128, 128, 0.808);
+}
+
+.playAnim {
+    animation-name: played;
+    animation-duration: 1s;
+  }
