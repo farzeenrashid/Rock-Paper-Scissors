@@ -181,13 +181,13 @@ body {
 
 .stone-wall {
     position:absolute;
-    transform: scale(1.3) translateY(-52%) translateX(-28%);
+    transform: scale(1.3) translateY(-40%) translateX(-38%);
     z-index: 1;
 }
 
 .wood-left {
     position:absolute;
-    transform: scale(0.8) scaleX(0.85) translateX(-45%) translateY(188%);
+    transform: scale(0.8) scaleX(0.85) translateX(-75%) translateY(188%);
 }
 
 .left {
@@ -198,7 +198,7 @@ body {
     list-style-type: none;
     position: relative;
     z-index: 2; 
-    transform: translateX(10%) translateY(5%);
+    transform: translateX(-4%) translateY(5%);
 }
 
 .left #uRock {
@@ -243,7 +243,7 @@ body {
 
 .wood-right {
     position:relative;
-    transform: translateY(201%) translateX(82%) scale(0.8) scaleX(0.85);
+    transform: translateY(201%) translateX(101%) scale(0.8) scaleX(0.85);
 }
 
 .right {
@@ -254,7 +254,7 @@ body {
     list-style-type: none;
     position: relative;
     z-index: 2; 
-    transform: translateX(0%) translateY(-57%);
+    transform: translateX(15%) translateY(-57%);
 }
 
 .right #cRock {
@@ -289,63 +289,86 @@ body {
 
 .user-side p {
     font-size: 30px;
-    margin: -310px 0px 0px 25px;
+    margin: -310px 0px 0px -30px;
     font-family: 'Alexandria', sans-serif;
     position: absolute;
 }
 
 .computer-side p {
     font-size: 30px;
-    margin: -310px 0px 0px 330px;
+    margin: -310px 0px 0px 390px;
     font-family: 'Alexandria', sans-serif;
     position: absolute;
 }
 
-#user-score, .round-number, #computer-score, .game-message {
+#userScore, #computerScore, #roundNumber, .round-number,  .game-message, .user-score, .computer-score {
     position: absolute;
     z-index: 2;
 }
 
-#user-score p {
-    font-size: 20px;
-    transform: translateY(-650%) translateX(-165%); 
+#userScore {
+    font-size: 40px;
+    margin: -230px 0px 0px -270px;
     background-color: white;
     font-weight: bold;
-    padding: 10px;
+    padding: 0px 80px 10px;
     font-family: 'Alexandria', sans-serif;
 } 
 
-#computer-score p {
-    /* font-size: 20px;
-    transform: translateY(-650%) translateX(76%); 
+#computerScore {
+    font-size: 40px;
+    margin: -230px 0px 0px 90px;
     background-color: white;
+    color: black;
     font-weight: bold;
-    padding: 10px;
-    font-family: 'Alexandria', sans-serif; */
-    font-size: 20px;
-    margin: -245px 0px 0px 90px;
-    background-color: white;
-    color: white;
-    font-weight: bold;
-    padding: 10px;
+    padding: 0px 87px 10px;
     font-family: 'Alexandria', sans-serif;
-    position: absolute;
 } 
 
-.round-number p {
-    font-size: 20px;
-    margin: -257px 0px 0px 35px;
+#roundNumber {
+    font-size: 30px;
+    margin: -221px 0px 0px -39px;
     background-color: black;
     color: white;
     font-weight: bold;
+    font-family: 'Alexandria', sans-serif;
+    padding: 0px 32px 10px 33px;
+}
+
+.round-number p {
+    font-size: 20px;
+    margin: -265px 0px 0px -39px;
+    background-color: black;
+    color: white;
     padding: 10px;
     font-family: 'Alexandria', sans-serif;
     position: absolute;
 } 
 
+.user-score p {
+    font-size: 20px;
+    margin: -270px 0px 0px -270px;
+    background-color: white;
+    color: black;
+    padding: 10px 42px;
+    font-family: 'Alexandria', sans-serif;
+    position: absolute;
+}
+
+.computer-score p {
+    font-size: 20px;
+    margin: -270px 0px 0px 90px;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    font-family: 'Alexandria', sans-serif;
+    position: absolute;
+    white-space: nowrap;
+}
+
 .game-message p {
     font-size: 20px;
-    transform: translateY(340%) translateX(-38%); 
+    transform: translateY(455%) translateX(-50%); 
     background-color: rgb(188, 127, 196);
     padding: 15px 300px;
     border: 3px solid rgb(145, 97, 184);
