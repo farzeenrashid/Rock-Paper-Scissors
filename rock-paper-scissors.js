@@ -130,19 +130,19 @@ function resetAnimation(elementId) {
         element.style.transform = 'translate(-210px, -990px) scale(0.2)';
     }
     else if (elementId === 'cRock') {
-        element.style.transform = 'translate(-230px, 525px) scale(0.2)';
+        element.style.transform = 'translate(160px, 990px) scale(0.2) rotate(-90deg)';
     }
     else if (elementId === 'cPaper') {
-        element.style.transform = 'translate(-230px, 525px) scale(0.2)';
+        element.style.transform = 'translate(165px, 509px) scale(0.2)';
     }
     else if (elementId === 'cScissors') {
-        element.style.transform = 'translate(-210px, 29px) scale(0.2)';
+        element.style.transform = 'translate(180px, 45px) scale(0.2)';
     }
     else if (elementId === 'cLizard') {
-        element.style.transform = 'translate(-230px, -475px) scale(0.2) rotate(-90deg)';
+        element.style.transform = 'translate(170px, -490px) scale(0.2) rotate(-90deg)';
     }
     else if (elementId === 'cSpock') {
-        element.style.transform = 'translate(-210px, -990px) scale(0.2)';
+        element.style.transform = 'translate(175px, -985px) scale(0.2)';
     }
 }
 
