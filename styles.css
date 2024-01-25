@@ -70,7 +70,7 @@ body {
     animation: screenAppear 0.9s ease-out;
 }
 
-.game-description, .game-rules, .round-selection, .main {
+.game-description, .game-rules, .round-selection {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,6 +79,10 @@ body {
 
 .main {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
 }
 
 .scroll-1, .scroll-2 {
@@ -177,13 +181,13 @@ body {
 
 .stone-wall {
     position:absolute;
-    transform: scale(1.3) translateY(-44%) translateX(-7.7%);
+    transform: scale(1.3) translateY(-52%) translateX(-28%);
     z-index: 1;
 }
 
 .wood-left {
     position:absolute;
-    transform: scale(0.8) scaleX(0.85) translateX(10%) translateY(187%);
+    transform: scale(0.8) scaleX(0.85) translateX(-45%) translateY(188%);
 }
 
 .left {
@@ -194,14 +198,14 @@ body {
     list-style-type: none;
     position: relative;
     z-index: 2; 
-    transform: translateX(38%) translateY(5%);
+    transform: translateX(10%) translateY(5%);
 }
 
 .left #uRock {
     /* position: relative; */
     cursor: pointer;
     transform: rotate(-90deg) scale(0.2) translateX(-1180%) translateY(-208%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     z-index: 2;
 }
 
@@ -209,7 +213,7 @@ body {
     /* position: absolute; */
     cursor: pointer;
     transform: scale(0.2) translateX(-275%) translateY(447%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
@@ -217,7 +221,7 @@ body {
     /* position: absolute; */
     cursor: pointer;
     transform: scale(0.2) translateX(-270%) translateY(25%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
@@ -225,7 +229,7 @@ body {
     /* position: absolute; */
     cursor: pointer;
     transform: rotate(-90deg) scale(0.2) translateX(565%) translateY(-195%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
@@ -233,13 +237,13 @@ body {
     /* position: absolute; */
     cursor: pointer;
     transform: scale(0.2) translateX(-285%) translateY(-790%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
 .wood-right {
     position:relative;
-    transform: translateY(201%) translateX(85%) scale(0.8) scaleX(0.85);
+    transform: translateY(201%) translateX(82%) scale(0.8) scaleX(0.85);
 }
 
 .right {
@@ -250,49 +254,51 @@ body {
     list-style-type: none;
     position: relative;
     z-index: 2; 
-    transform: translateX(3.5%) translateY(-57%);
+    transform: translateX(0%) translateY(-57%);
 }
 
 .right #cRock {
     transform: scale(0.2) translateX(190%) translateY(855%)  rotate(-90deg);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
 .right #cPaper {
     transform: scale(0.2) translateX(200%) translateY(435%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
 .right #cScissors {
     transform: scale(0.2) translateX(250%) translateY(36%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
 .right #cLizard {
     transform: scale(0.2) translateX(205%) translateY(-412%) rotate(-90deg);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
 .right #cSpock {
     transform: scale(0.2) translateX(235%) translateY(-780%);
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.35s ease-in-out;
     /* z-index: 2; */
 }
 
 .user-side p {
     font-size: 30px;
-    transform: translateY(-860%) translateX(80%);
+    margin: -310px 0px 0px 25px;
     font-family: 'Alexandria', sans-serif;
+    position: absolute;
 }
 
 .computer-side p {
     font-size: 30px;
-    transform: translateY(-860%) translateX(320%);
+    margin: -310px 0px 0px 330px;
     font-family: 'Alexandria', sans-serif;
+    position: absolute;
 }
 
 #user-score, .round-number, #computer-score, .game-message {
@@ -310,27 +316,36 @@ body {
 } 
 
 #computer-score p {
-    font-size: 20px;
+    /* font-size: 20px;
     transform: translateY(-650%) translateX(76%); 
     background-color: white;
     font-weight: bold;
     padding: 10px;
+    font-family: 'Alexandria', sans-serif; */
+    font-size: 20px;
+    margin: -245px 0px 0px 90px;
+    background-color: white;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
     font-family: 'Alexandria', sans-serif;
+    position: absolute;
 } 
 
 .round-number p {
     font-size: 20px;
-    transform: translateY(-650%) translateX(-8%); 
+    margin: -257px 0px 0px 35px;
     background-color: black;
     color: white;
     font-weight: bold;
     padding: 10px;
     font-family: 'Alexandria', sans-serif;
+    position: absolute;
 } 
 
 .game-message p {
     font-size: 20px;
-    transform: translateY(430%) translateX(-39%); 
+    transform: translateY(340%) translateX(-38%); 
     background-color: rgb(188, 127, 196);
     padding: 15px 300px;
     border: 3px solid rgb(145, 97, 184);
