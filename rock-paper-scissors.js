@@ -83,28 +83,30 @@ function animateMove(elementId) {
             translateY = -1190;
             scale = 0.65;
         } else if (elementId === 'cRock') {
-            translateX = 140;
-            translateY = 680;
-            scale = 0.65; 
+            translateX = -120;
+            translateY = 1250;
+            scale = 0.55; 
+            rotate = -90;
         }
         else if (elementId === 'cPaper') {
-            translateX = 140;
+            translateX = -140;
             translateY = 680;
             scale = 0.65; 
         }
         else if (elementId === 'cScissors') {
-            translateX = 140;
-            translateY = 680;
+            translateX = -140;
+            translateY = 50;
             scale = 0.65; 
         }
         else if (elementId === 'cLizard') {
-            translateX = 140;
-            translateY = 680;
-            scale = 0.65; 
+            translateX = -120;
+            translateY = -580;
+            scale = 0.55; 
+            rotate = -90;
         }
         else if (elementId === 'cSpock') {
-            translateX = 160;
-            translateY = 680;
+            translateX = -140;
+            translateY = -1190;
             scale = 0.65; 
         }
     element.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale}) rotate(${rotate}deg)`;
@@ -146,8 +148,8 @@ function resetAnimation(elementId) {
     }
 }
 
-  const choices = ["rock", "paper", "scissors", "lizard", "spock"];
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+//   const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+//     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
 
     playRound('u' + playerChoice);

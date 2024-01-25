@@ -210,7 +210,7 @@ body {
     cursor: pointer;
     transform: scale(0.2) translateX(-275%) translateY(447%);
     transition: transform 0.4s ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .left #uScissors {
@@ -218,7 +218,7 @@ body {
     cursor: pointer;
     transform: scale(0.2) translateX(-270%) translateY(25%);
     transition: transform 0.4s ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .left #uLizard {
@@ -226,7 +226,7 @@ body {
     cursor: pointer;
     transform: rotate(-90deg) scale(0.2) translateX(565%) translateY(-195%);
     transition: transform 0.4s ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .left #uSpock {
@@ -234,7 +234,7 @@ body {
     cursor: pointer;
     transform: scale(0.2) translateX(-285%) translateY(-790%);
     transition: transform 0.4s ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .wood-right {
@@ -256,29 +256,31 @@ body {
 .right #cRock {
     transform: scale(0.2) translateX(190%) translateY(855%)  rotate(-90deg);
     transition: transform 0.4s ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .right #cPaper {
     transform: scale(0.2) translateX(200%) translateY(435%);
     transition: transform 0.4s ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .right #cScissors {
     transform: scale(0.2) translateX(250%) translateY(36%);
     transition: transform 0.4s ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .right #cLizard {
     transform: scale(0.2) translateX(205%) translateY(-412%) rotate(-90deg);
+    transition: transform 0.4s ease-in-out;
+    /* z-index: 2; */
 }
 
 .right #cSpock {
     transform: scale(0.2) translateX(235%) translateY(-780%);
     transition: transform 0.4s ease-in-out;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .user-side p {
