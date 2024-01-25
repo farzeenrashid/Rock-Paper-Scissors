@@ -61,46 +61,46 @@ function animateMove(elementId) {
     let rotate = 0;
 
         if (elementId === 'uRock') {
-            translateX = 120;
+            translateX = 80;
             translateY = 1250;
             scale = 0.55; 
             rotate = -90;
         } else if (elementId === 'uPaper') {
-            translateX = 140;
-            translateY = 680;
+            translateX = 85;
+            translateY = 665;
             scale = 0.65; 
         } else if (elementId === 'uScissors') {
-            translateX = 140;
-            translateY = 50;
+            translateX = 95;
+            translateY = 40;
             scale = 0.65; 
         } else if (elementId === 'uLizard') {
-            translateX = 120;
-            translateY = -580;
+            translateX = 80;
+            translateY = -573;
             scale = 0.55; 
             rotate = -90;
         } else if (elementId === 'uSpock'){
-            translateX = 140;
-            translateY = -1190;
+            translateX = 100;
+            translateY = -1195;
             scale = 0.65;
         } else if (elementId === 'cRock') {
-            translateX = -120;
-            translateY = 1250;
+            translateX = -150;
+            translateY = 1218;
             scale = 0.55; 
             rotate = -90;
         }
         else if (elementId === 'cPaper') {
-            translateX = -140;
-            translateY = 680;
+            translateX = -145;
+            translateY = 633;
             scale = 0.65; 
         }
         else if (elementId === 'cScissors') {
-            translateX = -140;
-            translateY = 50;
+            translateX = -135;
+            translateY = 40;
             scale = 0.65; 
         }
         else if (elementId === 'cLizard') {
-            translateX = -120;
-            translateY = -580;
+            translateX = -145;
+            translateY = -605;
             scale = 0.55; 
             rotate = -90;
         }
