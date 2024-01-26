@@ -4,6 +4,9 @@ function showTitleScreen() {
     document.getElementById('game-rules-screen').style.display = 'none';
     document.getElementById('round-selection-screen').style.display = 'none';
     document.getElementById('main-screen').style.display = 'none';
+    document.getElementById('victory-screen').style.display = 'none';
+    document.getElementById('defeat-screen').style.display = 'none';
+    document.getElementById('tie-screen').style.display = 'none';
 }
 
 window.onload = function () {
@@ -34,6 +37,21 @@ function showMainGameScreen() {
 //     document.getElementById('computer-score').textContent = computerWinCounter;
 }
 
+function showVictoryScreen() {
+    document.getElementById('main-screen').style.display = 'none';
+    document.getElementById('victory-screen').style.display = 'block';
+}
+
+function showDefeatScreen() {
+    document.getElementById('main-screen').style.display = 'none';
+    document.getElementById('defeat-screen').style.display = 'block';
+}
+
+function showTieScreen() {
+    document.getElementById('main-screen').style.display = 'none';
+    document.getElementById('tie-screen').style.display = 'block';
+}
+
 // when i click rock, computer chooses and clicks its choice
 // at same times both choices get dragged to middle of screen side by side
 // the side that wins gets background green, the losing side background red
@@ -56,6 +74,55 @@ let round = 0;
 
 // const tMessage = document.getElementById('game-message');
 // // tMessage.textContent = message; 
+
+// let maxRounds = document.getElementsByClassName(".three-selection button");
+// let maxRounds = null;
+
+// function getRounds() {
+//     document.querySelector('.round-selection button').onclick = textOfRounds();
+//     maxRounds = event.target.innerHTML;
+//     // maxRounds = ".round-selection".target.textContent;
+//     // document.getElementsByClassName('.three-selection button').addEventListener('click', getRounds);
+// }
+
+
+function endGame() {
+    if (round === 3) {
+        if (resultMessage.includes('You win!')) {
+            showVictoryScreen();
+        }
+        else if (resultMessage.includes('The computer wins!')) {
+            showDefeatScreen();
+        }
+        else if (resultMessage.includes("It's a tie!")) {
+            showTieScreen();
+        }
+      }
+    
+      else if (round === 5) {
+        if (resultMessage.includes('You win!')) {
+            showVictoryScreen();
+        }
+        else if (resultMessage.includes('The computer wins!')) {
+            showDefeatScreen();
+        }
+        else if (resultMessage.includes("It's a tie!")) {
+            showTieScreen();
+        }
+      }
+    
+      else if (round === 10) {
+        if (resultMessage.includes('You win!')) {
+            showVictoryScreen();
+        }
+        else if (resultMessage.includes('The computer wins!')) {
+            showDefeatScreen();
+        }
+        else if (resultMessage.includes("It's a tie!")) {
+            showTieScreen();
+        }
+      }
+}
 
 function animateMove(elementId) {
     const element = document.getElementById(elementId);
@@ -226,7 +293,6 @@ function displayResult(playerChoice, computerChoice) {
 
     messageBoard(resultMessage);
 
-
     if (resultMessage.includes('You win!')) {
         userChoiceElement.classList.add('highlight-winner');
         computerChoiceElement.classList.add('highlight-loser');
@@ -316,6 +382,7 @@ function updateScoreBoard() {
     const roundDisplay = document.getElementById('roundNumber');
     roundDisplay.textContent = round; 
 }
+
 
 function playRound(playerChoice) {
     const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];

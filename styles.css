@@ -2,7 +2,7 @@
     text-decoration: none;
 }
 
-body {
+body:not(#victory-screen):not(#defeat-screen):not(#tie-screen) {
     background-image: url('/images/Grass.jpg');
     background-attachment: fixed;
     overflow: hidden;
@@ -413,6 +413,18 @@ body {
 
 .highlight-tie {
     background-color: rgba(216, 216, 216, 0.5);
+}
+
+#victory-screen {
+    background-image: url('/images/Victory-Background.jpg');
+}
+
+#defeat-screen {
+    background-image: url('/images/Defeat-Background.jpg');
+}
+
+#tie-screen {
+    background-image: url('/images/Tie-Background.jpg');
 }
 
 /* .playAnim {
