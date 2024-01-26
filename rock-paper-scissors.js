@@ -46,8 +46,8 @@ function showMainGameScreen() {
 
 // ---------------------------------------------------------------------------
 
-let userScore = 0;
-let computerScore = 0;
+let uScore = 0;
+let cScore = 0;
 let round = 1;
 
 function animateMove(elementId) {
@@ -200,7 +200,7 @@ function determineWinner(playerChoice, computerChoice) {
         (playerChoice === "uSpock" && computerChoice === "cRock") ||
         (playerChoice === "uSpock" && computerChoice === "cScissors")
     ) {
-        userScore++;
+        uScore++;
         return "You win!";
     } else if (
         (computerChoice === "cRock" && playerChoice === "uScissors") ||
@@ -214,7 +214,7 @@ function determineWinner(playerChoice, computerChoice) {
         (computerChoice === "cSpock" && playerChoice === "uRock") ||
         (computerChoice === "cSpock" && playerChoice === "uScissors")
     ) {
-        computerScore++;
+        cScore++;
         return "The computer wins!";
     }
     else {
@@ -222,14 +222,23 @@ function determineWinner(playerChoice, computerChoice) {
     } 
 }
 
-function updateScoreDisplay() {
-    const userScoreElement = document.getElementById('u' + 'userScore');
-    const computerScoreElement = document.getElementById('c' + 'computerScore');
-    const roundElement = document.getElementById('roundNumber');
+// function updateScoreDisplay() {
+//     const userScoreElement = document.getElementById('u' + 'userScore');
+//     const computerScoreElement = document.getElementById('c' + 'computerScore');
+//     const roundElement = document.getElementById('roundNumber');
 
-    userScoreElement.textContent = userScore;
-    computerScoreElement.textContent = computerScore;
-    roundElement.textContent = `Round ${round}`;
+//     userScoreElement.textContent = userScore;
+//     computerScoreElement.textContent = computerScore;
+//     roundElement.textContent = `Round ${round}`;
+// }
+
+function updateScoreBoard() {
+    const uScoreDisplay = document.getElementById('userScore');
+    uScoreDisplay.textContent = uScore;
+    const cScoreDisplay = document.getElementById('computerScore');
+    cScoreDisplay.textContent = cScore; 
+    const roundDisplay = document.getElementById('roundNumber');
+    roundDisplay.textContent = round; 
 }
 
 function playRound(playerChoice) {
@@ -239,5 +248,8 @@ function playRound(playerChoice) {
     animateMove('u' + playerChoice);
     animateMove('c' + computerChoice);
     displayResult('u' + playerChoice, 'c' + computerChoice);
+    updateScoreBoard();
 }
+
+
 
