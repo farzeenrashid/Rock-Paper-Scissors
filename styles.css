@@ -301,7 +301,7 @@ body {
     position: absolute;
 }
 
-#userScore, #computerScore, #roundNumber, .round-number,  .game-message, .user-score, .computer-score {
+#userScore, #computerScore, #roundNumber, .round-number,  #game-message, .user-score, .computer-score {
     position: absolute;
 }
 
@@ -372,13 +372,15 @@ body {
 }
 
 
-.game-message p {
+#game-message {
     font-size: 20px;
-    transform: translateY(455%) translateX(-50%); 
+    /* transform: translateY(500%) translateX(-50%);  */
+    margin: 295px -295px;
     background-color: rgb(188, 127, 196);
-    padding: 15px 300px;
+    padding: 15px 290px;
     border: 3px solid rgb(145, 97, 184);
     font-family: 'Alexandria', sans-serif;
+    white-space: nowrap;
 }
 
 @keyframes screenAppear {
