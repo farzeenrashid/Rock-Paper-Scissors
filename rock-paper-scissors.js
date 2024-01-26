@@ -49,6 +49,15 @@ function showMainGameScreen() {
 let uScore = 0;
 let cScore = 0;
 let round = 1;
+// let message = 0;
+
+// const wMessage = document.getElementById('game-message');
+
+// const lMessage = document.getElementById('game-message');
+// // lMessage.textContent = message; 
+
+// const tMessage = document.getElementById('game-message');
+// // tMessage.textContent = message; 
 
 function animateMove(elementId) {
     const element = document.getElementById(elementId);
@@ -155,6 +164,33 @@ function resetAnimation(elementId) {
     playRound('u' + playerChoice);
 
 
+    function wMessageBoard() {
+        const w = 
+        ["You won this round, good job!", "Bravo!", 
+        "Keep it up!", "Nice one.", "Let's gooo!"];
+        const message = document.getElementById('game-message');
+        const wMessage = w[Math.floor(Math.random() * w.length)];
+        message.textContent = wMessage;
+    }
+    
+    function lMessageBoard() {
+        const l = 
+        ["Oh no, looks like you lost.", "Aw shucks.", 
+        "Nooo!", "The computer beat you to it.", ":("];
+        const message = document.getElementById('game-message');
+        const lMessage = l[Math.floor(Math.random() * l.length)];
+        message.textContent = lMessage;  
+    }
+    
+    function tMessageBoard() {
+        const t = 
+        ["It's a tie!", "Looks like we got a tie."];
+        const message = document.getElementById('game-message');
+        const tMessage = t[Math.floor(Math.random() * t.length)];
+        message.textContent = tMessage;  
+    }
+    
+
 function displayResult(playerChoice, computerChoice) {
     // const newPlayerChoice = playerChoice.substring(1);
     // const newCompChoice = computerChoice.substring(1);
@@ -183,6 +219,11 @@ function displayResult(playerChoice, computerChoice) {
         updateScoreDisplay();
     }, 2000);
 }
+// const lMessage = document.getElementById('game-message');
+// // lMessage.textContent = message; 
+
+// const tMessage = document.getElementById('game-message');
+// tMessage.textContent = message;
 
 function determineWinner(playerChoice, computerChoice) {
     //     const newPlayerChoice = playerChoice.substring(1);
@@ -219,7 +260,7 @@ function determineWinner(playerChoice, computerChoice) {
         return "The computer wins!";
     }
     else {
-     return "It's a tie!";
+        return "It's a tie!";
     } 
 }
 
@@ -251,6 +292,3 @@ function playRound(playerChoice) {
     displayResult('u' + playerChoice, 'c' + computerChoice);
     updateScoreBoard();
 }
-
-
-
