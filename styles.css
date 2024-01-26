@@ -373,11 +373,12 @@ body {
 
 
 #game-message {
+    display: flex;
     font-size: 20px;
-    /* transform: translateY(500%) translateX(-50%);  */
-    margin: 295px -295px;
+    transform: translateY(490%) translateX(-50%); 
+    /* margin: 295px -55px; */
     background-color: rgb(188, 127, 196);
-    padding: 15px 290px;
+    padding: 15px 50px;
     border: 3px solid rgb(145, 97, 184);
     font-family: 'Alexandria', sans-serif;
     white-space: nowrap;
