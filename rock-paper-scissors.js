@@ -180,7 +180,6 @@ function displayResult(playerChoice, computerChoice) {
         resetAnimation(computerChoice);
         userChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
         computerChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
-        round++;
         updateScoreDisplay();
     }, 2000);
 }
@@ -200,6 +199,7 @@ function determineWinner(playerChoice, computerChoice) {
         (playerChoice === "uSpock" && computerChoice === "cRock") ||
         (playerChoice === "uSpock" && computerChoice === "cScissors")
     ) {
+        round++;
         uScore++;
         return "You win!";
     } else if (
@@ -214,6 +214,7 @@ function determineWinner(playerChoice, computerChoice) {
         (computerChoice === "cSpock" && playerChoice === "uRock") ||
         (computerChoice === "cSpock" && playerChoice === "uScissors")
     ) {
+        round++;
         cScore++;
         return "The computer wins!";
     }
