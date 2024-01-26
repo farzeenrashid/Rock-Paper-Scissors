@@ -248,7 +248,7 @@ function displayResult(playerChoice, computerChoice) {
         userChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
         computerChoiceElement.classList.remove('highlight-winner', 'highlight-loser');
         const message = document.getElementById('game-message');
-        message.textContent = '0';
+        message.textContent = '. . .';
         // updateScoreDisplay();
         // messageBoard(resultMessage);
     }, 2000);
