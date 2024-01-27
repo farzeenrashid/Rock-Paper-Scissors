@@ -79,7 +79,7 @@ let round = 0;
 // let maxRounds = null;
 
 // function getRounds() {
-//     document.querySelector('.round-selection button').onclick = textOfRounds();
+// const maxRounds = document.querySelector('.round-selection button').onclick;
 //     maxRounds = event.target.innerHTML;
 //     // maxRounds = ".round-selection".target.textContent;
 //     // document.getElementsByClassName('.three-selection button').addEventListener('click', getRounds);
@@ -87,19 +87,18 @@ let round = 0;
 
 
 function endGame() {
-    if (round === 3) {
+    // if (round === 3) {
         if (resultMessage.includes('You win!')) {
             showVictoryScreen();
-        }
-        else if (resultMessage.includes('The computer wins!')) {
+        } else if (resultMessage.includes('The computer wins!')) {
             showDefeatScreen();
-        }
-        else if (resultMessage.includes("It's a tie!")) {
+        } else if (resultMessage.includes("It's a tie!")) {
             showTieScreen();
-        }
-      }
+        } 
+
+    //   }
     
-      else if (round === 5) {
+    //   else if (round === 5) {
         if (resultMessage.includes('You win!')) {
             showVictoryScreen();
         }
@@ -109,9 +108,9 @@ function endGame() {
         else if (resultMessage.includes("It's a tie!")) {
             showTieScreen();
         }
-      }
+    //   }
     
-      else if (round === 10) {
+    //   else if (round === 10) {
         if (resultMessage.includes('You win!')) {
             showVictoryScreen();
         }
@@ -121,7 +120,7 @@ function endGame() {
         else if (resultMessage.includes("It's a tie!")) {
             showTieScreen();
         }
-      }
+    //   }
 }
 
 function animateMove(elementId) {
@@ -242,7 +241,7 @@ function messageBoard(resultMessage) {
     else if (resultMessage === "The computer wins!") {
         const l = 
         ["Oh no, looks like you lost.", "Aw shucks.", 
-        "Nooo!", "The computer beat you to it.", ":("];
+        "Nooo!", "The computer beat you to it.", ":(", "You really lost to a computer..."];
         const message = document.getElementById('game-message');
         const lMessage = l[Math.floor(Math.random() * l.length)];
         message.textContent = lMessage;  
