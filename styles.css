@@ -65,7 +65,7 @@ body:not(#victory-screen):not(#defeat-screen):not(#tie-screen) {
     transform: translateY(2px);
 }
 
-#start-screen, #game-description-screen, #game-rules-screen, #round-selection-screen, #main-screen {
+#start-screen, #game-description-screen, #game-rules-screen, #round-selection-screen, #main-screen, #victory-screen, #defeat-screen, #tie-screen {
     position: relative;
     animation: screenAppear 0.9s ease-out;
 }
@@ -77,7 +77,7 @@ body:not(#victory-screen):not(#defeat-screen):not(#tie-screen) {
     height: 98vh;
 }
 
-.main {
+.main, #victory-screen, #defeat-screen, #tie-screen {
     position: relative;
     display: flex;
     justify-content: center;

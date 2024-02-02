@@ -1,4 +1,6 @@
 
+// let roundSelection = 0;
+
 function showTitleScreen() {
     document.getElementById('game-description-screen').style.display = 'none';
     document.getElementById('game-rules-screen').style.display = 'none';
@@ -25,9 +27,22 @@ function showGameRulesScreen() {
     document.getElementById('game-rules-screen').style.display = 'block';
 }
 
+let selectedRounds = 0;
+
 function showRoundSelection() {
     document.getElementById('game-rules-screen').style.display = 'none';
     document.getElementById('round-selection-screen').style.display = 'block';
+   
+    const roundSelection = document.querySelector('#round-selection-screen');
+    roundSelection.addEventListener('click', handleClick);
+
+    function handleClick(e) {
+        if (e.target.matches('button')) {
+            selectedRounds = parseInt(e.target.textContent);
+            // showMainGameScreen(selectedRounds);
+        }
+    }
+
 }
 
 function showMainGameScreen() {
@@ -38,18 +53,24 @@ function showMainGameScreen() {
 }
 
 function showVictoryScreen() {
+    // updateScoreBoard();
     document.getElementById('main-screen').style.display = 'none';
     document.getElementById('victory-screen').style.display = 'block';
+    // resetGame();
 }
 
 function showDefeatScreen() {
+    // updateScoreBoard();
     document.getElementById('main-screen').style.display = 'none';
     document.getElementById('defeat-screen').style.display = 'block';
+    // resetGame();
 }
 
 function showTieScreen() {
+    // updateScoreBoard();
     document.getElementById('main-screen').style.display = 'none';
     document.getElementById('tie-screen').style.display = 'block';
+    // resetGame();
 }
 
 // when i click rock, computer chooses and clicks its choice
@@ -79,49 +100,14 @@ let round = 0;
 // let maxRounds = null;
 
 // function getRounds() {
-// const maxRounds = document.querySelector('.round-selection button').onclick;
+// const maxRounds = document.querySelector('.three-selection button').onclick;
 //     maxRounds = event.target.innerHTML;
 //     // maxRounds = ".round-selection".target.textContent;
 //     // document.getElementsByClassName('.three-selection button').addEventListener('click', getRounds);
 // }
 
-
-function endGame() {
-    // if (round === 3) {
-        if (resultMessage.includes('You win!')) {
-            showVictoryScreen();
-        } else if (resultMessage.includes('The computer wins!')) {
-            showDefeatScreen();
-        } else if (resultMessage.includes("It's a tie!")) {
-            showTieScreen();
-        } 
-
-    //   }
-    
-    //   else if (round === 5) {
-        if (resultMessage.includes('You win!')) {
-            showVictoryScreen();
-        }
-        else if (resultMessage.includes('The computer wins!')) {
-            showDefeatScreen();
-        }
-        else if (resultMessage.includes("It's a tie!")) {
-            showTieScreen();
-        }
-    //   }
-    
-    //   else if (round === 10) {
-        if (resultMessage.includes('You win!')) {
-            showVictoryScreen();
-        }
-        else if (resultMessage.includes('The computer wins!')) {
-            showDefeatScreen();
-        }
-        else if (resultMessage.includes("It's a tie!")) {
-            showTieScreen();
-        }
-    //   }
-}
+// const maxRounds = document.querySelector('.three-selection button').onclick;
+// let roundSelection = 0;
 
 function animateMove(elementId) {
     const element = document.getElementById(elementId);
@@ -219,6 +205,7 @@ function resetAnimation(elementId) {
     else if (elementId === 'cSpock') {
         element.style.transform = 'translate(175px, -985px) scale(0.2)';
     }
+    
 }
 
 //   const choices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -316,7 +303,18 @@ function displayResult(playerChoice, computerChoice) {
         message.textContent = '. . .';
         // updateScoreDisplay();
         // messageBoard(resultMessage);
+        if (round === selectedRounds) {
+            // Check for game result and show the corresponding screen
+            if (uScore > cScore) {
+                showVictoryScreen();
+            } else if (uScore < cScore) {
+                showDefeatScreen();
+            } else {
+                showTieScreen();
+            }
+        }
     }, 2000);
+    
 }
 // const lMessage = document.getElementById('game-message');
 // // lMessage.textContent = message; 
@@ -373,6 +371,8 @@ function determineWinner(playerChoice, computerChoice) {
 //     roundElement.textContent = `Round ${round}`;
 // }
 
+// let maxRounds = 0;
+
 function updateScoreBoard() {
     const uScoreDisplay = document.getElementById('userScore');
     uScoreDisplay.textContent = uScore;
@@ -383,6 +383,58 @@ function updateScoreBoard() {
 }
 
 
+
+// const roundSelection = document.getElementById(playerChoice);
+// function getRoundSelection(roundSelection, resultMessage) {
+//     if (roundSelection === 3) {
+//         if (resultMessage.includes('You win!')) {
+//             showVictoryScreen();
+//         } else if (resultMessage.includes('The computer wins!')) {
+//             showDefeatScreen();
+//         } else if (resultMessage.includes("It's a tie!")) {
+//             showTieScreen();
+//         } 
+
+//       }
+    
+//       else if (roundSelection === 5) {
+//         if (resultMessage.includes('You win!')) {
+//             showVictoryScreen();
+//         }
+//         else if (resultMessage.includes('The computer wins!')) {
+//             showDefeatScreen();
+//         }
+//         else if (resultMessage.includes("It's a tie!")) {
+//             showTieScreen();
+//         }
+//       }
+    
+//       else if (roundSelection === 10) {
+//         if (resultMessage.includes('You win!')) {
+//             showVictoryScreen();
+//         }
+//         else if (resultMessage.includes('The computer wins!')) {
+//             showDefeatScreen();
+//         }
+//         else if (resultMessage.includes("It's a tie!")) {
+//             showTieScreen();
+//         }
+//       }
+// }
+
+// function resetGame() {
+//     // Reset variables and game state
+//     // uScore = 0;
+//     // cScore = 0;
+//     // round = 0;
+//     // selectedRounds = 0;
+
+//     // Reset UI elements if needed
+//     updateScoreBoard();
+//     // showTitleScreen();
+
+// }
+
 function playRound(playerChoice) {
     const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
@@ -391,4 +443,22 @@ function playRound(playerChoice) {
     animateMove('c' + computerChoice);
     displayResult('u' + playerChoice, 'c' + computerChoice);
     updateScoreBoard();
+
+    // const roundSelection = document.querySelector('#round-selection-screen');
+    // roundSelection.addEventListener('click', handleClick);
+    // function handleClick(e) {
+    //     if(e.target.matches('button')) {
+    //         let maxRounds = e.target.textContent;
+    //         if (round == maxRounds) {
+    //             if (resultMessage.includes('You win!')) {
+    //                 showVictoryScreen();
+    //             } else if (resultMessage.includes('The computer wins!')) {
+    //                 showDefeatScreen();
+    //             } else if (resultMessage.includes("It's a tie!")) {
+    //                 showTieScreen();
+    //             } 
+    //         }
+    //     }
+    // }
+    
 }
