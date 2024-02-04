@@ -112,6 +112,20 @@ let round = 0;
 // const maxRounds = document.querySelector('.three-selection button').onclick;
 // let roundSelection = 0;
 
+function disableUserChoices() {
+    const userChoices = document.querySelectorAll('.left li');
+    userChoices.forEach(choice => {
+        choice.style.pointerEvents = 'none';
+    });
+}
+
+function enableUserChoices() {
+    const userChoices = document.querySelectorAll('.left li');
+    userChoices.forEach(choice => {
+        choice.style.pointerEvents = 'auto';
+    });
+}
+
 function animateMove(elementId) {
     const element = document.getElementById(elementId);
     // element.classList.add('dragging');
@@ -208,7 +222,6 @@ function resetAnimation(elementId) {
     else if (elementId === 'cSpock') {
         element.style.transform = 'translate(175px, -985px) scale(0.2)';
     }
-    
 }
 
 //   const choices = ["rock", "paper", "scissors", "lizard", "spock"];
@@ -439,6 +452,7 @@ function resetGame() {
 }
 
 function playRound(playerChoice) {
+    disableUserChoices();
     const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
 
@@ -463,5 +477,9 @@ function playRound(playerChoice) {
     //         }
     //     }
     // }
+
+    setTimeout(() => {
+        enableUserChoices(); // Re-enable user choices after animation
+    }, 2000);
     
 }
