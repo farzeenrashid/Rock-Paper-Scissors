@@ -3,7 +3,7 @@
 }
 
 body {
-    background-image: url('/images/Grass.jpg');
+    background-image: url('./images/Grass.jpg');
     background-attachment: fixed;
     overflow: hidden;
     margin: 0;
@@ -479,20 +479,20 @@ body {
 }
 
 #victory-screen {
-    background-image: url('/images/Victory-Background.jpg') ;
+    background-image: url('./images/Victory-Background.jpg') ;
     background-size: cover;
     overflow: hidden;
     
 }
 
 #defeat-screen {
-    background-image: url('/images/Defeat-Background.jpg');
+    background-image: url('./images/Defeat-Background.jpg');
     background-size: cover;
     overflow: hidden;
 }
 
 #tie-screen {
-    background-image: url('/images/Tie-Background.jpg');
+    background-image: url('./images/Tie-Background.jpg');
     background-size: cover;
     overflow: hidden;
 }
