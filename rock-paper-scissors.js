@@ -31,6 +31,9 @@ let selectedRounds = 0;
 
 function showRoundSelection() {
     document.getElementById('game-rules-screen').style.display = 'none';
+    document.getElementById('victory-screen').style.display = 'none';
+    document.getElementById('defeat-screen').style.display = 'none';
+    document.getElementById('tie-screen').style.display = 'none';
     document.getElementById('round-selection-screen').style.display = 'block';
    
     const roundSelection = document.querySelector('#round-selection-screen');
@@ -56,21 +59,21 @@ function showVictoryScreen() {
     // updateScoreBoard();
     document.getElementById('main-screen').style.display = 'none';
     document.getElementById('victory-screen').style.display = 'block';
-    // resetGame();
+    resetGame();
 }
 
 function showDefeatScreen() {
     // updateScoreBoard();
     document.getElementById('main-screen').style.display = 'none';
     document.getElementById('defeat-screen').style.display = 'block';
-    // resetGame();
+    resetGame();
 }
 
 function showTieScreen() {
     // updateScoreBoard();
     document.getElementById('main-screen').style.display = 'none';
     document.getElementById('tie-screen').style.display = 'block';
-    // resetGame();
+    resetGame();
 }
 
 // when i click rock, computer chooses and clicks its choice
@@ -422,18 +425,18 @@ function updateScoreBoard() {
 //       }
 // }
 
-// function resetGame() {
-//     // Reset variables and game state
-//     // uScore = 0;
-//     // cScore = 0;
-//     // round = 0;
-//     // selectedRounds = 0;
+function resetGame() {
+    // Reset variables and game state
+    uScore = 0;
+    cScore = 0;
+    round = 0;
+    selectedRounds = 0;
 
-//     // Reset UI elements if needed
-//     updateScoreBoard();
-//     // showTitleScreen();
+    // Reset UI elements if needed
+    updateScoreBoard();
+    // showTitleScreen();
 
-// }
+}
 
 function playRound(playerChoice) {
     const choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"];
