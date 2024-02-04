@@ -109,26 +109,82 @@ body {
     }
 }
 
-.game-description p, .game-rules ul {
+.game-rules ul {
     position: absolute;
-    margin: 0px 150px 0px 200px;
+    margin: -100px 180px 0px 200px;
     z-index: 2;
-    font-size: 19px;
+    font-size: 16px;
+    font-family: 'Alexandria', sans-serif;
     white-space: pre-line;
-    animation: textAppear 2s ease-out;
+    animation: textAppear 1s ease-in-out backwards 1s;
 }
 
-.game-description button, .game-rules button {
+.game-description p1 {
+    position: absolute;
+    margin: -400px 140px 0px 200px;
+    z-index: 2;
+    font-size: 16px;
+    font-family: 'Alexandria', sans-serif;
+    white-space: pre-line;
+    /* transition: textAppear 1s ease-in forwards 1s; */
+    animation: textAppear 1s ease-in-out backwards 1s;
+
+}
+
+.game-description p2 {
+    position: absolute;
+    margin: -220px 130px 0px 200px;
+    z-index: 2;
+    font-size: 16px;
+    font-family: 'Alexandria', sans-serif;
+    white-space: pre-line;
+    animation: textAppear 1s ease-in-out backwards 2s;
+}
+
+.game-description p3 {
+    position: absolute;
+    margin: -25px 180px 0px 200px;
+    z-index: 2;
+    font-size: 16px;
+    font-family: 'Alexandria', sans-serif;
+    white-space: pre-line;
+    animation: textAppear 1s ease-in-out backwards 3s;
+}
+
+.game-description p4 {
+    position: absolute;
+    margin: 205px 180px 0px 200px;
+    z-index: 2;
+    font-size: 16px;
+    font-family: 'Alexandria', sans-serif;
+    white-space: pre-line;
+    animation: textAppear 1s ease-in-out backwards 4s;
+}
+
+.game-description button {
     position: absolute;
     z-index: 2;
     font-size: 18px;
-    margin-top: 360px;
+    margin-top: 375px;
     padding: 5px 20px 5px 20px;
     font-family: 'Alexandria', sans-serif;
     color: black;
     background-color: rgb(248, 202, 49);
     border: 1px solid rgb(212, 160, 2);
-    animation: textAppear 4s ease-out;
+    animation: textAppear 1s ease-in-out backwards 5s;
+}
+
+.game-rules button {
+    position: absolute;
+    z-index: 2;
+    font-size: 18px;
+    margin-top: 375px;
+    padding: 5px 20px 5px 20px;
+    font-family: 'Alexandria', sans-serif;
+    color: black;
+    background-color: rgb(248, 202, 49);
+    border: 1px solid rgb(212, 160, 2);
+    animation: textAppear 1s ease-in-out backwards 2s;
 }
 
 .game-description button:hover, .game-rules button:hover, .round-selection button:hover {
