@@ -18,7 +18,7 @@
     <div id="start-screen">
 
         <div class="title">
-            <img src="images/Wood-2.png" alt="Wood Picture" class="wood-title">
+            <img src="./images/Wood-2.png" alt="Wood Picture" class="wood-title">
             <div class="wood-text">
                 <p>Rock, Paper, Scissors,</p>
                 <p>Lizard, Spock!</p>
@@ -35,7 +35,7 @@
     <div id="game-description-screen">
 
         <div class="game-description">
-            <img class="scroll-1" src="images/Scroll.png" alt="Scroll Picture">
+            <img class="scroll-1" src="./images/Scroll.png" alt="Scroll Picture">
             <p1>"<strong>Rock, Paper, Scissors, 
                 Lizard, Spock</strong>" is an 
                 expansion on the traditional 
@@ -60,7 +60,7 @@
     <div id="game-rules-screen">
 
         <div class="game-rules">
-            <img class="scroll-2" src="images/Scroll.png" alt="Scroll Picture">
+            <img class="scroll-2" src="./images/Scroll.png" alt="Scroll Picture">
             <ul>
                 <li><strong>Rock crushes Scissors,</strong></li>
                 <li><strong>Paper covers Rock,</strong></li>
@@ -87,15 +87,15 @@
         <div class="round-selection">
             <p>You want to play best of...</p>
             <div class="three-selection">
-                <img class="Red-Banner" src="images/Red-Banner.png" alt="Red Banner">
+                <img class="Red-Banner" src="./images/Red-Banner.png" alt="Red Banner">
                 <button class='round-button' onclick="showMainGameScreen(3)">3</button>
             </div>
             <div class="five-selection">
-                <img class="Yellow-Banner" src="images/Yellow-Banner.png" alt="Yellow Banner">
+                <img class="Yellow-Banner" src="./images/Yellow-Banner.png" alt="Yellow Banner">
                 <button class='round-button' onclick="showMainGameScreen(5)">5</button>            
             </div>
             <div class="ten-selection">
-                <img class="Blue-Banner" src="images/Blue-Banner.png" alt="Blue Banner">
+                <img class="Blue-Banner" src="./images/Blue-Banner.png" alt="Blue Banner">
                 <button class='round-button' onclick="showMainGameScreen(10)">10</button>
             </div>
         </div>
@@ -111,13 +111,13 @@
 
             <div class="user-side"><p>You</p></div>
             <div class="left">
-                <img class="wood-left" src="images/Wood-1.png" alt="Wood Picture">
+                <img class="wood-left" src="./images/Wood-1.png" alt="Wood Picture">
                 <ul>
-                    <li><img src="images/Rock.png" alt="Rock" id="uRock" onclick="playRound('Rock')"></li>
-                    <li><img id="uPaper" src="images/Paper.png" alt="Paper" onclick="playRound('Paper')"></li>
-                    <li><img id="uScissors" src="images/Scissors.png" alt="Scissors" onclick="playRound('Scissors')"></li>
-                    <li><img id="uLizard" src="images/Lizard.png" alt="Lizard" onclick="playRound('Lizard')"></li>
-                    <li><img id="uSpock" src="images/Spock.png" alt="Spock" onclick="playRound('Spock')"></li>
+                    <li><img src="./images/Rock.png" alt="Rock" id="uRock" onclick="playRound('Rock')"></li>
+                    <li><img id="uPaper" src="./images/Paper.png" alt="Paper" onclick="playRound('Paper')"></li>
+                    <li><img id="uScissors" src="./images/Scissors.png" alt="Scissors" onclick="playRound('Scissors')"></li>
+                    <li><img id="uLizard" src="./images/Lizard.png" alt="Lizard" onclick="playRound('Lizard')"></li>
+                    <li><img id="uSpock" src="./images/Spock.png" alt="Spock" onclick="playRound('Spock')"></li>
                 </ul>
             </div>
 
@@ -134,7 +134,7 @@
                 <div class = computer-score>
                     <p>Computer Score</p>                    
                 </div>
-                <img class="stone-wall" src="images/Stone-Wall.png" alt="Stone Wall">
+                <img class="stone-wall" src="./images/Stone-Wall.png" alt="Stone Wall">
                 <div class="user-selection"></div>
                 <div class="other-selection"></div>
                 <div id="game-message">Let's begin!</div>
@@ -142,13 +142,13 @@
 
             <div class="computer-side"><p>Computer</p></div>
             <div class="right">
-                <img class="wood-right" src="images/Wood-1.png" alt="Wood Picture">
+                <img class="wood-right" src="./images/Wood-1.png" alt="Wood Picture">
                 <ul>
-                    <li><img id="cRock" src="images/Rock.png" alt="Rock"></li>
-                    <li><img id="cPaper" src="images/Paper.png" alt="Paper"></li>
-                    <li><img id="cScissors" src="images/Scissors.png" alt="Scissors"></li>
-                    <li><img id="cLizard" src="images/Lizard.png" alt="Lizard"></li>
-                    <li><img id="cSpock" src="images/Spock.png" alt="Spock"></li>
+                    <li><img id="cRock" src="./images/Rock.png" alt="Rock"></li>
+                    <li><img id="cPaper" src="./images/Paper.png" alt="Paper"></li>
+                    <li><img id="cScissors" src="./images/Scissors.png" alt="Scissors"></li>
+                    <li><img id="cLizard" src="./images/Lizard.png" alt="Lizard"></li>
+                    <li><img id="cSpock" src="./images/Spock.png" alt="Spock"></li>
                 </ul>
             </div>
 
@@ -158,7 +158,7 @@
 
     <div id="victory-screen">
         <div class="victory">
-            <img class="victory-banner" src="images/Victory.png" alt="Victory Banner">
+            <img class="victory-banner" src="./images/Victory.png" alt="Victory Banner">
             <div class="victory-container">
                 <p>YAY! You won the game!</p>
                 <div class="restart-container">
@@ -172,7 +172,7 @@
 
     <div id="defeat-screen">
         <div class="defeat">
-            <img class="defeat-banner" src="images/Defeat.png" alt="Defeat Banner">
+            <img class="defeat-banner" src="./images/Defeat.png" alt="Defeat Banner">
             <div class="defeat-container">
                 <p>You lost... Better luck next time?</p>
                 <div class="restart-container">
