@@ -1,2 +1,2 @@
 # Rock, Paper, Scissors, Lizard, Spock!
-![image](https://github.com/farzeenrashid/Rock-Paper-Scissors-Lizard-Spock/assets/120308578/107ee5fc-8908-4cc3-90d6-980166f9f3c0)
+![Screenshot (1)](https://github.com/farzeenrashid/Rock-Paper-Scissors-Lizard-Spock/assets/120308578/c69d1b17-5257-4344-919e-91793993ded7)
